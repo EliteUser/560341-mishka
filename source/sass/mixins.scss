@@ -1,0 +1,6 @@
+@mixin heading($font-size) {
+  font-size: $font-size;
+  line-height: 30px;
+  font-weight: bold;
+  color: $text-dark;
+}

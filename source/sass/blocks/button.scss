@@ -1,0 +1,41 @@
+.button {
+  display: block;
+  padding: 14px 15px;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: $text;
+  background-color: transparent;
+  border: 2px solid $text;
+
+  &:hover {
+    cursor: pointer;
+    color: $text-light;
+    background-color: $text;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.button--light {
+  padding: 16px 20px;
+  color: $text-light;
+  background-color: $page-green;
+  border: none;
+
+  &:hover {
+    color: $text-light;
+    background-color: $page-green;
+    opacity: 0.8;
+  }
+
+  &:active {
+    color: $text-light;
+    background-color: $page-green;
+    opacity: 0.6;
+  }
+}

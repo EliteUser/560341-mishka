@@ -1,0 +1,19 @@
+.social {
+  display: block;
+
+  &:hover {
+    .social__icon {
+      fill: $page-darkgreen-hover;
+    }
+  }
+
+  &:active {
+    .social__icon {
+      opacity: 0.3;
+    }
+  }
+}
+
+.social__icon {
+  fill: #231f20;
+}

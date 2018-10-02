@@ -6,6 +6,8 @@
         content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mishka - Каталог товаров</title>
+  <link rel="preload" href="fonts/opensans.woff2" as="font">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font">
   <link rel="stylesheet" href="css/normalize.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -13,7 +15,7 @@
 <body>
 
   <div hidden>
-    <!--<include src="build/img/sprite.svg"></include>-->
+    <include src="build/img/sprite.svg"></include>
   </div>
 
   <!-- Шапка -->
@@ -23,12 +25,12 @@
     <header class="page-header">
       <nav class="main-navigation">
         <div class="main-navigation__box">
-          <a class="main-navigation__logo">
+          <a class="main-navigation__logo" href="index.html">
             <span class="visually-hidden">Mishka</span>
             <!--TODO picture-->
-            <img class="main-navigation__logo-image" src="#" width="86" height="35" alt="Логотип Mishka">
+            <img class="main-navigation__logo-image" src="img/logo-mobile.svg" width="85" height="35" alt="Логотип Mishka">
           </a>
-          <button class="main-navigation__toggle main-navigation__toggle--active" type="button" id="navigation-button">
+          <button class="main-navigation__toggle" type="button" id="navigation-button">
             <span class="main-navigation__toggle-icon">Меню</span>
           </button>
         </div>
@@ -57,7 +59,7 @@
         </ul>
       </nav>
 
-      <h1 class="page-header__title">Каталог товаров</h1>
+      <h1 class="page-header__title page-header__title--inner">Каталог товаров</h1>
     </header>
 
     <!-- Основная часть -->
@@ -73,15 +75,15 @@
             <article class="product">
               <!--TODO picture-->
               <a href="#">
-                <img class="product__image" src="#" width="260" height="195" alt="Зайчик-попрыгайчик">
+                <img class="product__image" src="img/photo-hare-mobile@1x.jpg" width="260" height="195" alt="Зайчик-попрыгайчик">
               </a>
               <div class="product__wrapper">
-                <a href="#">
+                <a class="product__link" href="#">
                   <h3 class="product__name">Зайчик-попрыгайчик</h3>
                 </a>
                 <p class="product__info">Рост 30 см, вес 200 г</p>
                 <div class="product__box">
-                  <b class="product__price">1200 руб.</b>
+                  <b class="product__price">1 200 руб.</b>
                   <a class="product__cart" href="#">
                     <span class="visually-hidden">Добавить в корзину</span>
                     <svg class="product__icon" width="20" height="19">
@@ -97,10 +99,10 @@
             <article class="product">
               <!--TODO picture-->
               <a href="#">
-                <img class="product__image" src="#" width="260" height="195" alt="Корзинка для белья">
+                <img class="product__image" src="img/photo-bowl-mobile@1x.jpg" width="260" height="195" alt="Корзинка для белья">
               </a>
               <div class="product__wrapper">
-                <a href="#">
+                <a class="product__link" href="#">
                   <h3 class="product__name">Корзинка для белья</h3>
                 </a>
                 <p class="product__info">Диаметр 15 см, высота 10 см</p>
@@ -121,15 +123,15 @@
             <article class="product">
               <!--TODO picture-->
               <a href="#">
-                <img class="product__image" src="#" width="260" height="195" alt="Большая корзинка для игрушек">
+                <img class="product__image" src="img/photo-toys-mobile@1x.jpg" width="260" height="195" alt="Большая корзинка для игрушек">
               </a>
               <div class="product__wrapper">
-                <a href="#">
+                <a class="product__link" href="#">
                   <h3 class="product__name">Большая корзинка для игрушек</h3>
                 </a>
                 <p class="product__info">Диаметр 30 см, высота 30 см</p>
                 <div class="product__box">
-                  <b class="product__price">1500 руб.</b>
+                  <b class="product__price">1 500 руб.</b>
                   <a class="product__cart" href="#">
                     <span class="visually-hidden">Добавить в корзину</span>
                     <svg class="product__icon" width="20" height="19">
@@ -145,11 +147,11 @@
 
       <!-- Блок с видео -->
 
-      <section class="video">
+      <section class="video page-main__video">
         <h2 class="video__title">Процесс производства</h2>
         <!--TODO picture-->
         <div class="video__box">
-          <img class="video__image" src="#" width="260" height="150" alt="Видео о том, как появляются наши товары.">
+          <img class="video__image" src="img/video-mobile@1x.jpg" width="260" height="150" alt="Видео о том, как появляются наши товары.">
           <a class="video__play" href="#">
             <span class="visually-hidden">Смотреть видео</span>
           </a>
@@ -168,7 +170,7 @@
           <a class="social" href="#" target="_blank" title="Наш Instagram">
             <span class="visually-hidden">Наш Instagram</span>
             <svg class="social__icon" width="22" height="21">
-              <use href="#icon-in"></use>
+              <use href="#icon-insta"></use>
             </svg>
           </a>
         </li>
@@ -186,7 +188,7 @@
           <a class="social" href="#" target="_blank" title="Наш Twitter">
             <span class="visually-hidden">Наш Twitter</span>
             <svg class="social__icon" width="23" height="20">
-              <use href="#icon-tw"></use>
+              <use href="#icon-twitter"></use>
             </svg>
           </a>
         </li>
@@ -208,37 +210,39 @@
     <!-- Модальное окно -->
 
     <section class="modal-cart">
-      <h2 class="modal-cart__title">Добавить в корзину</h2>
-      <form class="modal-cart__form" action="https://echo.htmlacademy.ru" method="post">
-        <p class="modal-cart__text">Выберите размер:</p>
+      <div class="modal-cart__box">
+        <h2 class="modal-cart__title">Добавить в&nbsp;корзину</h2>
+        <form class="modal-cart__form" action="https://echo.htmlacademy.ru" method="post">
+          <p class="modal-cart__text">Выберите размер:</p>
 
-        <div class="modal-cart__wrapper">
-          <p class="modal-cart__radio">
-            <input class="visually-hidden" type="radio" name="productSize" id="size-s" value="small">
-            <label class="modal-cart__label" for="size-s">
-              <span class="visually-hidden">Маленький</span>
-              S
-            </label>
-          </p>
+          <div class="modal-cart__wrapper">
+            <p class="modal-cart__radio">
+              <input class="modal-cart__input visually-hidden" type="radio" name="productSize" id="size-s" value="small" checked>
+              <label class="modal-cart__label" for="size-s">
+                <span class="visually-hidden">Маленький</span>
+                S
+              </label>
+            </p>
 
-          <p class="modal-cart__radio">
-            <input class="visually-hidden" type="radio" name="productSize" id="size-m" value="medium">
-            <label class="modal-cart__label" for="size-m">
-              <span class="visually-hidden">Средний</span>
-              M
-            </label>
-          </p>
+            <p class="modal-cart__radio">
+              <input class="modal-cart__input visually-hidden" type="radio" name="productSize" id="size-m" value="medium">
+              <label class="modal-cart__label" for="size-m">
+                <span class="visually-hidden">Средний</span>
+                M
+              </label>
+            </p>
 
-          <p class="modal-cart__radio">
-            <input class="visually-hidden" type="radio" name="productSize" id="size-l" value="large">
-            <label class="modal-cart__label" for="size-l">
-              <span class="visually-hidden">Большой</span>
-              L
-            </label>
-          </p>
-        </div>
-        <button class="modal-cart__button" type="submit">Добавить</button>
-      </form>
+            <p class="modal-cart__radio">
+              <input class="modal-cart__input visually-hidden" type="radio" name="productSize" id="size-l" value="large">
+              <label class="modal-cart__label" for="size-l">
+                <span class="visually-hidden">Большой</span>
+                L
+              </label>
+            </p>
+          </div>
+          <button class="button button--light modal-cart__button" type="submit">Добавить</button>
+        </form>
+      </div>
     </section>
 
   </div>

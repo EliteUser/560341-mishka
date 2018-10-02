@@ -1,0 +1,89 @@
+.textfield {
+  margin: 0;
+}
+
+.textfield__label {
+  display: block;
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: bold;
+  color: $text-dark;
+}
+
+.textfield__box {
+  position: relative;
+}
+
+.textfield__input {
+  padding: 13px 0;
+  width: 100%;
+  font-size: 19px;
+  line-height: 24px;
+  color: $text;
+  border: none;
+  border-bottom: 2px solid $text-dark;
+
+  &::placeholder {
+    font-size: 17px;
+    line-height: 20px;
+    color: $placeholder;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $page-green;
+
+    & + .textfield__icon {
+      opacity: 1;
+      fill: $page-green;
+    }
+  }
+}
+
+.textfield__icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
+
+.textfield--phone {
+  margin: 7px 0 31px;
+
+  .textfield__label {
+    margin-bottom: 6px;
+  }
+
+  .textfield__input {
+    padding-right: 40px;
+
+    &::placeholder {
+      font-size: 19px;
+    }
+  }
+
+  .textfield__icon {
+    right: 8px;
+    width: 25px;
+    height: 24px;
+  }
+}
+
+.textfield--email {
+  margin-bottom: 30px;
+
+  .textfield__label {
+    margin-bottom: 6px;
+  }
+
+  .textfield__input {
+    padding-right: 40px;
+  }
+
+  .textfield__icon {
+    right: 4px;
+    width: 32px;
+    height: 21px;
+  }
+}
