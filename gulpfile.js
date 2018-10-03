@@ -37,9 +37,9 @@ gulp.task("browserSync", function () {
   });
 
   gulp.watch(`${config.src}/sass/**/*.{scss,sass}`, gulp.series("style"));
-  gulp.watch(`${config.src}/js/**/*.js`,gulp.series("js"));
+  gulp.watch(`${config.src}/js/**/*.js`, gulp.series("js"));
   gulp.watch(`${config.src}/*.html`, gulp.series("html"));
-  gulp.watch(`${config.build}/**/*.*`).on('change', browserSync.reload);
+  gulp.watch(`${config.build}/**/*.*`).on("change", browserSync.reload);
 });
 
 /* Сборка стилей и минификация */
@@ -48,7 +48,7 @@ gulp.task("style", function () {
   return gulp.src(`${config.src}/sass/style.scss`)
     .pipe(plumber())
     .pipe(sass({
-      outputStyle: 'expanded'
+      outputStyle: "expanded"
     }))
     .pipe(postcss([
       autoprefixer()
@@ -76,9 +76,9 @@ gulp.task("js", function () {
   return gulp.src(`${config.src}/js/**/*.js`)
     .pipe(plumber())
     .pipe(babel({
-      presets: ['env']
+      presets: ["env"]
     }))
-    .pipe(concat('main.js'))
+    .pipe(concat("main.js"))
     .pipe(gulp.dest(`${config.build}/js`))
     .pipe(uglifyJs())
     .pipe(rename("main.min.js"))
@@ -150,7 +150,6 @@ gulp.task("copy", function () {
   return gulp.src([
     `${config.src}/fonts/**/*.{woff,woff2}`,
     `${config.src}/img/**`,
-    // `${config.src}/js/**`
   ], {
     base: config.src
   })

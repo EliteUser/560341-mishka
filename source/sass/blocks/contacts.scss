@@ -80,7 +80,9 @@
     width: 67px;
     height: 100px;
     content: "";
-    background: url("../img/icon-map-pin.svg") no-repeat center;
+    background-image: url("../img/icon-map-pin.svg");
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
@@ -92,4 +94,11 @@
 .contacts__button {
   min-width: 260px;
   font-size: 18px;
+}
+
+@media screen and (min-width: 321px) {
+  .contacts__title {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }

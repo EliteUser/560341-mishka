@@ -77,3 +77,10 @@
 .order__button {
   width: 100%;
 }
+
+@media screen and (min-width: 321px) {
+  .order {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

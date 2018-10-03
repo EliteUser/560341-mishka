@@ -1,6 +1,8 @@
 .popular {
   padding: 27px 30px 42px;
-  background: url("../img/bg-zigzag-line.svg") repeat-x left bottom;
+  background-image: url("../img/bg-zigzag-line.svg");
+  background-repeat: repeat-x;
+  background-position: left bottom;
   background-size: 290px 6px;
 }
 
@@ -69,4 +71,11 @@
 .popular__button {
   margin: 0 auto;
   max-width: 260px;
+}
+
+@media screen and (min-width: 321px) {
+  .popular {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }

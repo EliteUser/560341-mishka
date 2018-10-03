@@ -29,25 +29,37 @@
 }
 
 .about__item--flower {
-  background: url("../img/icon-feature-flower.svg") no-repeat 8px 2px;
+  background-image: url("../img/icon-feature-flower.svg");
+  background-repeat: no-repeat;
+  background-position: 8px 2px;
 }
 
 .about__item--money {
-  background: url("../img/icon-feature-money.svg") no-repeat 0 3px;
+  background-image: url("../img/icon-feature-money.svg");
+  background-repeat: no-repeat;
+  background-position: 0 3px;
 }
 
 .about__item--heart {
-  background: url("../img/icon-feature-heart.svg") no-repeat 8px 7px;
+  background-image: url("../img/icon-feature-heart.svg");
+  background-repeat: no-repeat;
+  background-position: 8px 7px;
 }
 
 .about__item--ball {
-  background: url("../img/icon-feature-ball.svg") no-repeat 4px 5px;
+  background-image: url("../img/icon-feature-ball.svg");
+  background-repeat: no-repeat;
+  background-position: 4px 5px;
 }
 
 .about__item--rocket {
-  background: url("../img/icon-feature-rocket.svg") no-repeat 0 6px;
+  background-image: url("../img/icon-feature-rocket.svg");
+  background-repeat: no-repeat;
+  background-position: 0 6px;
 }
 
 .about__item--gift {
-  background: url("../img/icon-feature-gift.svg") no-repeat 3px 4px;
+  background-image: url("../img/icon-feature-gift.svg");
+  background-repeat: no-repeat;
+  background-position: 3px 4px;
 }

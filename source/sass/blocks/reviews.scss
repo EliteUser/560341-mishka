@@ -1,6 +1,8 @@
 .reviews {
   padding: 25px 30px 51px;
-  background: url("../img/bg-zigzag-line.svg") repeat-x left bottom;
+  background-image: url("../img/bg-zigzag-line.svg");
+  background-repeat: repeat-x;
+  background-position: left bottom;
   background-size: 290px 6px;
 }
 
@@ -52,4 +54,11 @@
 .reviews__button {
   margin: 0 auto;
   max-width: 260px;
+}
+
+@media screen and (min-width: 321px) {
+  .reviews {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }

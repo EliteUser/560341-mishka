@@ -18,7 +18,7 @@
 }
 
 .product__wrapper {
-  padding: 26px 28px 27px;
+  padding: 26px 28px 19px;
   border: 1px solid $border-light;
 }
 
@@ -53,7 +53,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 21px;
+  margin-right: -11px;
+  padding-top: 11px;
   border-top: 1px solid $border-light;
 }
 
@@ -66,6 +67,7 @@
 
 .product__cart {
   display: block;
+  padding: 10px;
 
   .product__icon {
     opacity: 0.2;

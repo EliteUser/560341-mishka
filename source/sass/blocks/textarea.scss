@@ -5,7 +5,7 @@
   font-size: 19px;
   color: $text;
   border: 2px solid $text-dark;
-  resize: none;
+  resize: vertical;
 
   &::placeholder {
     font-size: 17px;

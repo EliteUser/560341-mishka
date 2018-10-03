@@ -1,4 +1,6 @@
 .main-navigation__logo {
+  padding: 15px;
+
   &[href]:hover {
     opacity: 0.6;
   }
@@ -44,9 +46,7 @@
   }
 }
 
-.main-navigation__toggle-icon,
-.main-navigation__toggle-icon::before,
-.main-navigation__toggle-icon::after {
+.main-navigation__toggle-icon {
   position: absolute;
   display: block;
   width: 20px;
@@ -55,13 +55,23 @@
 }
 
 .main-navigation__toggle-icon::before {
-  content: "";
+  position: absolute;
   transform: translateY(-6px);
+  display: block;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: $menu-toggle;
 }
 
 .main-navigation__toggle-icon::after {
-  content: "";
+  position: absolute;
   transform: translateY(6px);
+  display: block;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: $menu-toggle;
 }
 
 .main-navigation__toggle--active {
@@ -96,14 +106,15 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 27px 30px;
+  padding: 5px 30px;
   border-bottom: 1px solid $border-light;
 }
 
 .main-navigation__link {
   position: relative;
   display: block;
-  padding-left: 45px;
+  width: 100%;
+  padding: 22px 10px 22px 45px;
   font-size: 17px;
   line-height: 24px;
   font-weight: bold;
@@ -134,4 +145,12 @@
   left: 0;
   transform: translateY(-50%);
   opacity: 0.2;
+}
+
+@media screen and (min-width: 425px) {
+  .main-navigation__link {
+    margin: 0 auto;
+    width: auto;
+    padding-left: 45px;
+  }
 }

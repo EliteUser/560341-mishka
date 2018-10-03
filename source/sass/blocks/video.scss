@@ -19,7 +19,9 @@
   line-height: 24px;
   font-weight: bold;
   color: $text-dark;
-  background: url("../img/icon-video.svg") no-repeat 33px center;
+  background-image: url("../img/icon-video.svg");
+  background-repeat: no-repeat;
+  background-position: 33px center;
 }
 
 .video__box {
@@ -42,7 +44,9 @@
   display: block;
   width: 101px;
   height: 77px;
-  background: url("../img/icon-play.svg") no-repeat center;
+  background-image: url("../img/icon-play.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   transition: transform 0.1s;
 
   &:hover {
