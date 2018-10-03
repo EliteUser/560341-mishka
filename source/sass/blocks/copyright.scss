@@ -1,0 +1,30 @@
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.copyright__text {
+  margin-right: 30px;
+  font-size: 19px;
+  font-weight: bold;
+  color: $text-dark;
+}
+
+.copyright__link {
+  display: block;
+  padding-top: 2px;
+}
+
+.copyright__icon {
+  fill: $page-green;
+
+  &:hover {
+    fill: $page-darkgreen-hover;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

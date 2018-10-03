@@ -1,0 +1,156 @@
+.main-navigation__logo {
+  padding: 15px;
+
+  &[href]:hover {
+    opacity: 0.6;
+  }
+
+  &[href]:active {
+    opacity: 0.3;
+  }
+}
+
+.main-navigation__box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  padding: 0 30px;
+  border-top: 1px solid $border-light;
+  border-bottom: 1px solid $border-light;
+}
+
+.main-navigation__toggle {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-navigation__toggle-icon {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: $menu-toggle;
+}
+
+.main-navigation__toggle-icon::before {
+  position: absolute;
+  transform: translateY(-6px);
+  display: block;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: $menu-toggle;
+}
+
+.main-navigation__toggle-icon::after {
+  position: absolute;
+  transform: translateY(6px);
+  display: block;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: $menu-toggle;
+}
+
+.main-navigation__toggle--active {
+  .main-navigation__toggle-icon {
+    width: 28px;
+    background-color: transparent;
+
+    &::before {
+      width: 28px;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      width: 28px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.main-navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+}
+
+.main-navigation__list--show {
+  display: block;
+}
+
+.main-navigation__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 30px;
+  border-bottom: 1px solid $border-light;
+}
+
+.main-navigation__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 22px 10px 22px 45px;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: bold;
+  color: $text-dark;
+
+  &[href]:hover {
+    color: rgba(0, 0, 0, 0.6);
+
+    .main-navigation__icon {
+      fill: $page-green;
+      opacity: 1;
+    }
+  }
+
+  &[href]:active {
+    color: rgba(0, 0, 0, 0.3);
+
+    .main-navigation__icon {
+      fill: $page-green;
+      opacity: 0.3;
+    }
+  }
+}
+
+.main-navigation__icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
+
+@media screen and (min-width: 425px) {
+  .main-navigation__link {
+    margin: 0 auto;
+    width: auto;
+    padding-left: 45px;
+  }
+}

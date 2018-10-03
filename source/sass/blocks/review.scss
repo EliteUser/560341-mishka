@@ -1,0 +1,22 @@
+.review__text {
+  margin: 0 0 25px;
+  font-size: 15px;
+  line-height: 30px;
+  color: $text;
+}
+
+.review__author {
+  margin: 0;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: bold;
+  color: $text-dark;
+}
+
+.review__social {
+  display: block;
+  font-size: 17px;
+  line-height: 36px;
+  font-weight: normal;
+  color: $text;
+}
