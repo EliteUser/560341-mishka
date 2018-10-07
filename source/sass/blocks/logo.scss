@@ -1,0 +1,45 @@
+.logo {
+  padding: 15px;
+
+  &[href]:hover {
+    opacity: 0.6;
+  }
+
+  &[href]:active {
+    opacity: 0.3;
+  }
+}
+
+.logo-image {
+  display: block;
+}
+
+.logo--footer {
+  display: none;
+
+  &[href]:hover {
+    opacity: 1;
+
+    .logo__icon {
+      fill: $page-darkgreen-hover;
+    }
+  }
+
+  &[href]:active {
+    opacity: 1;
+
+    .logo__icon {
+      opacity: 0.3;
+    }
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .logo {
+    padding: 0;
+  }
+
+  .logo--footer {
+    display: block;
+  }
+}

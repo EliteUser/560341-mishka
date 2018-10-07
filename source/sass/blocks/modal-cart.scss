@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 30px 30px 46px;
   text-align: center;
-  border-top: 1px solid #c7c7c7;
+  border: 1px solid #c7c7c7;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -55,4 +55,30 @@
 
 .modal-cart__button {
   width: 100%;
+}
+
+@media (min-width: $screen-tablet) {
+  .modal-cart__box {
+    max-width: 568px;
+    padding: 33px 70px 46px;
+  }
+
+  .modal-cart__title {
+    margin-bottom: 14px;
+    font-size: 30px;
+    line-height: 57px;
+  }
+
+  .modal-cart__text {
+    margin-bottom: 21px;
+    font-size: 17px;
+  }
+
+  .modal-cart__form {
+    padding: 0 39px;
+  }
+
+  .modal-cart__label {
+    min-width: 112px;
+  }
 }

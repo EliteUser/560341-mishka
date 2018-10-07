@@ -6,6 +6,7 @@
   color: $text;
   border: 2px solid $text-dark;
   resize: vertical;
+  border-radius: 0;
 
   &::placeholder {
     font-size: 17px;
@@ -20,4 +21,16 @@
   &:focus {
     border-color: $page-green;
   }
+}
+
+@media (min-width: $screen-tablet) {
+  .textarea__message {
+    &::placeholder {
+      font-size: 19px;
+    }
+  }
+}
+
+@media (min-width: $screen-desktop) {
+
 }

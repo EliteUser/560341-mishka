@@ -9,8 +9,53 @@
 
 .catalog__item {
   margin: 0 20px;
+  flex-shrink: 0;
 
   &:not(:last-child) {
     margin-bottom: 30px;
   }
+}
+
+@media (min-width: $screen-tablet) {
+  .catalog {
+    justify-content: flex-start;
+    padding: 70px 6.51% 0;
+    margin-bottom: 53px;
+  }
+
+  .catalog__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .catalog__item {
+    width: 100%;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      margin-bottom: 54px;
+    }
+  }
+}
+
+@media (min-width: $screen-desktop) {
+  .catalog {
+    padding: 113px 50px 0;
+    margin-bottom: 0;
+  }
+
+  .catalog__list {
+    margin: 0 -25px;
+  }
+
+  .catalog__item {
+    &:not(:last-child) {
+      margin-bottom: 57px;
+    }
+
+    display: flex;
+    width: auto;
+    margin: 0 25px 57px;
+  }
+
 }
