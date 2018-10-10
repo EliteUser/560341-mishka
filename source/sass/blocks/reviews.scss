@@ -56,9 +56,64 @@
   max-width: 260px;
 }
 
-@media screen and (min-width: 321px) {
+@media (min-width: 321px) {
   .reviews {
     padding-left: 10%;
     padding-right: 10%;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .reviews {
+    position: relative;
+    min-height: 500px;
+    padding: 77px 50px 100px;
+    background-image: url("../img/review@1x.jpg"), url("../img/bg-zigzag-line.svg");
+    background-repeat: no-repeat, repeat-x;
+    background-size: 350px 457px, 100%;
+    background-position: left top, center bottom;
+  }
+
+  .reviews__title {
+    margin-left: -5px;
+    margin-bottom: 50px;
+    padding-right: 30%;
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .reviews__wrapper {
+    position: absolute;
+    right: 50px;
+    bottom: 133px;
+    width: 175px;
+  }
+
+  .reviews__toggle {
+    border: none;
+    margin-bottom: 0;
+  }
+
+  .reviews__button {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    width: 175px;
+  }
+}
+
+@media (min-width: $screen-desktop) {
+  .reviews {
+    padding: 70px 130px 155px 225px;
+    background-position: 50px top, center bottom;
+  }
+
+  .reviews__title {
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .reviews__wrapper {
+    bottom: 188px;
   }
 }

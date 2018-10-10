@@ -20,3 +20,26 @@
   font-weight: normal;
   color: $text;
 }
+
+@media (min-width: $screen-tablet) {
+  .review__text {
+    margin-bottom: 57px;
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .review__author {
+    padding-right: 30%;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: $screen-desktop) {
+  .review__text {
+    margin-bottom: 38px;
+  }
+
+  .review__author {
+    font-size: 17px;
+  }
+}

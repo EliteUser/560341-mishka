@@ -20,8 +20,11 @@
   font-size: 19px;
   line-height: 24px;
   color: $text;
+  background-color: transparent;
   border: none;
   border-bottom: 2px solid $text-dark;
+  border-radius: 0;
+
 
   &::placeholder {
     font-size: 17px;
@@ -85,5 +88,92 @@
     right: 4px;
     width: 32px;
     height: 21px;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .textfield {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .textfield__label {
+    margin-right: 25px;
+    font-size: 19px;
+  }
+
+  .textfield__box {
+    width: 100%;
+  }
+
+  .textfield__input {
+    padding: 13px 16px;
+
+    &::placeholder {
+      font-size: 19px;
+    }
+  }
+
+  .textfield--phone {
+    position: relative;
+    margin: 0 0 24px;
+
+    .textfield__label {
+      top: 50%;
+      left: -166px;
+      transform: translateY(-50%);
+    }
+
+    .textfield__input {
+      padding-right: 60px;
+    }
+
+    .textfield__icon {
+      right: 26px;
+      width: 25px;
+      height: 24px;
+    }
+  }
+
+  .textfield--email {
+    position: relative;
+    margin-bottom: 0;
+
+    .textfield__label {
+      top: 50%;
+      left: -166px;
+      transform: translateY(-50%);
+    }
+
+    .textfield__input {
+      padding-right: 60px;
+    }
+
+    .textfield__icon {
+      right: 21px;
+    }
+  }
+}
+
+@media (min-width: $screen-desktop) {
+  .textfield--phone {
+    .textfield__label {
+      left: -112px;
+    }
+
+    .textfield__icon {
+      right: 8px;
+    }
+  }
+
+  .textfield--email {
+    .textfield__label {
+      left: -113px;
+    }
+
+    .textfield__icon {
+      right: 4px;
+    }
   }
 }

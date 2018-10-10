@@ -78,9 +78,137 @@
   width: 100%;
 }
 
-@media screen and (min-width: 321px) {
+@media (min-width: 321px) {
   .order {
     padding-left: 10%;
     padding-right: 10%;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .order {
+    padding: 63px 0 50px;
+  }
+
+  .order__description {
+    margin-bottom: 7px;
+    padding: 0 50px;
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .order__fieldset {
+    position: relative;
+    padding: 50px 50px 50px 217px;
+  }
+
+  .order__fieldset--bg {
+    background-color: $gray-bg;
+  }
+
+  .order__legend {
+    position: absolute;
+    top: 66px;
+    left: 50px;
+    max-width: 150px;
+    margin: 0;
+    background-color: transparent;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .order__list {
+    margin-bottom: 0;
+  }
+
+  .order__list--whitespace {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-right: -23px;
+    margin-bottom: -24px;
+  }
+
+  .order__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .order__textfield {
+    margin-bottom: 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .order__box {
+    padding: 50px 50px 50px 217px;
+    background-color: $gray-bg;
+  }
+
+  .order__textarea {
+    position: relative;
+    padding: 50px 50px 50px 217px;
+  }
+
+  .order__wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+  }
+
+  .order__text {
+    order: 1;
+    margin: 0;
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .order__button {
+    width: 230px;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: $screen-desktop) {
+  .order {
+    padding-top: 106px;
+  }
+
+  .order__description {
+    padding: 0 225px;
+  }
+
+  .order__fieldset {
+    padding: 50px 225px;
+  }
+
+  .order__legend {
+    top: 65px;
+    left: 113px;
+  }
+
+  .order__list--whitespace {
+    margin-right: -86px;
+  }
+
+  .order__box {
+    padding: 50px 225px;
+  }
+
+  .order__textarea {
+    padding: 50px 225px 45px;
+  }
+
+  .order__wrapper {
+    padding: 0 225px;
   }
 }
