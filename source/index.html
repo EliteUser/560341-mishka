@@ -204,13 +204,14 @@
             </div>
           </div>
         </div>
-        <!--TODO picture and iframe-->
-        <div class="contacts__wrapper">
+
+        <div class="contacts__wrapper" id="mapContainer">
           <picture class="contacts__map">
             <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.jpg">
             <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg">
             <img src="img/map-mobile@1x.jpg" alt="Как до нас добраться">
           </picture>
+          <div class="contacts__map-frame" id="map"></div>
         </div>
         <a class="button contacts__button" href="feedback.html">Напишите нам</a>
       </section>
@@ -308,6 +309,7 @@
 
   </div>
 
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script src="js/main.min.js"></script>
 </body>
 </html>
