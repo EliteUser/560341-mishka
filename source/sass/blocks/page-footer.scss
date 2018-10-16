@@ -1,6 +1,9 @@
 .page-footer {
-  padding: 15px 30px 22px;
   background-color: $gray-bg;
+}
+
+.page-footer__content {
+  padding: 15px 30px 22px;
 }
 
 .page-footer__list {
@@ -21,13 +24,13 @@
 }
 
 @media (min-width: $screen-tablet) {
-  .page-footer {
-    padding: 20px 50px;
+  .page-footer__content {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 143px;
+    padding: 20px 50px;
   }
 
   .page-footer__list {

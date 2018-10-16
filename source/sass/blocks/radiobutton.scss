@@ -24,6 +24,7 @@
     height: 40px;
     border: 2px solid $text-dark;
     border-radius: 50%;
+    transition-duration: 0.15s;
   }
 
   &::after {
@@ -57,8 +58,21 @@
 }
 
 .radiobutton__input:focus + .radiobutton__label {
-  //outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  &::before {
+    border-color: $page-green;
+  }
+}
+
+.radiobutton__input:disabled + .radiobutton__label {
+  color: rgba(0, 0, 0, 0.3);
+
+  &::before {
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:hover {
+    cursor: auto;
+  }
 }
 
 @media (min-width: $screen-tablet) {

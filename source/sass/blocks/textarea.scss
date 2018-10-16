@@ -7,6 +7,7 @@
   border: 2px solid $text-dark;
   resize: vertical;
   border-radius: 0;
+  transition-duration: 0.15s;
 
   &::placeholder {
     font-size: 17px;
@@ -19,6 +20,7 @@
   }
 
   &:focus {
+    outline: none;
     border-color: $page-green;
   }
 }

@@ -39,6 +39,7 @@
 .contacts__link {
   position: relative;
   color: inherit;
+  transition-duration: 0.15s;
 
   &::before {
     position: absolute;
@@ -74,6 +75,10 @@
 .contacts__wrapper {
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 457px;
   margin-bottom: 39px;
 
   &::before {
@@ -90,10 +95,25 @@
   }
 }
 
+.contacts__wrapper--js {
+  &::before {
+    display: none;
+  }
+}
+
 .contacts__map {
   display: block;
   margin: 0 auto;
   width: 322px;
+  height: 457px;
+}
+
+.contacts__map-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 322px;
   height: 457px;
 }
 
@@ -187,6 +207,8 @@
     position: absolute;
     top: 70px;
     right: 51px;
+    width: 525px;
+    height: 457px;
 
     &::before {
       top: calc(50% - 81px);
@@ -195,6 +217,11 @@
   }
 
   .contacts__map {
+    width: 525px;
+    height: 457px;
+  }
+
+  .contacts__map-frame {
     width: 525px;
     height: 457px;
   }
