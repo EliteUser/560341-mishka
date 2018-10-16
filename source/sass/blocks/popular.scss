@@ -86,7 +86,7 @@
   .popular {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     min-height: 600px;
     padding: 47px 50px 70px;
     background-repeat: no-repeat;
@@ -96,51 +96,58 @@
 
   .popular__title {
     margin-bottom: 49px;
+    padding-right: 200px;
     font-size: 43px;
     line-height: 50px;
     flex-grow: 1;
   }
 
   .popular__tag {
+    position: absolute;
+    top: 58px;
+    right: 50px;
     margin-bottom: 0;
-    padding: 12px 10px;
     width: 123px;
     text-align: center;
     line-height: 17px;
-    flex-grow: 0;
+  }
+
+  .popular__box {
+    position: relative;
+    min-height: 400px;
+    padding-right: 335px;
   }
 
   .popular__description {
-    width: 44%;
     margin-bottom: 35px;
-    margin-right: 50%;
+    padding-right: 40px;
     font-size: 17px;
     line-height: 30px;
   }
 
   .popular__stats {
     width: 291px;
-    margin-right: 50%;
     margin-bottom: 57px;
   }
 
   .popular__image {
     position: absolute;
-    top: 154px;
-    right: 51px;
+    top: 8px;
+    right: 0;
     z-index: -2;
     width: 333px;
     height: 404px;
   }
 
   .popular__price {
-    margin: 0 60% 34px 71px;
+    margin: 0 0 34px 71px;
     font-size: 20px;
     line-height: 24px;
+    text-align: left;
   }
 
   .popular__button {
-    margin: 0 50% 0 0;
+    margin: 0;
     max-width: none;
     width: 290px;
   }
@@ -159,13 +166,16 @@
 
   .popular__tag {
     position: absolute;
-    top: 129px;
+    top: 140px;
     left: 71px;
+  }
+
+  .popular__box {
+    padding-right: 525px;
   }
 
   .popular__description {
     margin-bottom: 47px;
-    width: 34%;
   }
 
   .popular__stats {
@@ -173,7 +183,7 @@
   }
 
   .popular__image {
-    top: 73px;
+    top: -158px;
     width: 525px;
     height: 636px;
   }

@@ -2,6 +2,7 @@
   max-width: 260px;
   padding-bottom: 33px;
   border: 1px solid $border-light;
+  transition-duration: 0.15s;
 
   &:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
@@ -117,13 +118,14 @@
     position: relative;
     width: auto;
     min-height: 457px;
-    padding-left: 682px;
+    padding: 40px 20px 45px 760px;
   }
 
   .video__box {
     position: absolute;
     top: 0;
     left: 0;
+    margin-bottom: 0;
   }
 
   .video__image {
@@ -133,18 +135,17 @@
 
   .video__title {
     margin-bottom: 12px;
-    padding: 95px 57px 20px 78px;
-    background-position: 79px 41px;
+    padding: 55px 57px 20px 0;
+    background-position: 0 0;
   }
 
   .video__description {
     margin-bottom: 47px;
-    padding: 0 20px 0 77px;
+    padding: 0 20px 0 0;
   }
 
   .video__button {
     width: 230px;
-    margin-left: 80px;
-    margin-right: 0;
+    margin: 0;
   }
 }

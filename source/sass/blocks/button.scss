@@ -9,6 +9,7 @@
   color: $text;
   background-color: transparent;
   border: 2px solid $text;
+  transition-duration: 0.15s;
 
   &:hover {
     cursor: pointer;

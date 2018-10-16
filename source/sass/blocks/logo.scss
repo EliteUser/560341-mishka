@@ -1,5 +1,6 @@
 .logo {
   padding: 15px;
+  transition-duration: 0.15s;
 
   &[href]:hover {
     opacity: 0.6;
@@ -10,12 +11,16 @@
   }
 }
 
-.logo-image {
+.logo__image {
   display: block;
 }
 
 .logo--footer {
   display: none;
+
+  .logo__icon {
+    transition-duration: 0.15s;
+  }
 
   &[href]:hover {
     opacity: 1;

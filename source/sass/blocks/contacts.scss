@@ -39,6 +39,7 @@
 .contacts__link {
   position: relative;
   color: inherit;
+  transition-duration: 0.15s;
 
   &::before {
     position: absolute;

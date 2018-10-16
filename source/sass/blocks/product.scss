@@ -1,7 +1,8 @@
 .product {
   display: flex;
   flex-direction: column;
-  max-width: 260px;
+  width: inherit; // для ie11
+  transition-duration: 0.15s;
 
   &:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
@@ -68,11 +69,23 @@
 }
 
 .product__cart {
+  position: relative;
   display: block;
   padding: 10px;
 
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+
   .product__icon {
     opacity: 0.2;
+    transition-duration: 0.15s;
   }
 
   &:hover {
@@ -131,12 +144,26 @@
 @media (min-width: $screen-desktop) {
   .product {
     flex-direction: column;
-    width: 316px;
+    flex-grow: 1;
   }
 
   .product__image {
+    margin: 0 auto;
     width: 316px;
     height: 462px;
+  }
+
+  @supports (object-fit: cover) {
+    .product__image {
+      display: flex;
+      width: 100%;
+      height: 462px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
   .product__wrapper {
