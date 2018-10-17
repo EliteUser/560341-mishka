@@ -193,9 +193,10 @@
 
   .main-navigation__sublist--links {
     position: relative;
-    top: 73px;
+    top: 88px;
     flex-wrap: wrap;
     flex-grow: 1;
+    height: auto;
 
     .main-navigation__subitem {
       border-left: none;
