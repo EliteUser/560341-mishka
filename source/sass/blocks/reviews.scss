@@ -72,6 +72,10 @@
     background-repeat: no-repeat, repeat-x;
     background-size: 350px 457px, 100%;
     background-position: left top, center bottom;
+
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image: url("../img/review@2x.jpg"), url("../img/bg-zigzag-line.svg");
+    }
   }
 
   .reviews__title {
