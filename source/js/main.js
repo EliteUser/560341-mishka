@@ -31,7 +31,7 @@ if (ymaps) {
         balloonContent: "Mishka - Милые штуки ручной работы для дома"
       }, {
         iconLayout: "default#image",
-        iconImageHref: "../img/icon-map-pin.svg",
+        iconImageHref: "../img/map-pin-icon.svg",
         iconImageSize: [67, 100],
         iconImageOffset: [-35, -90]
       }

@@ -54,7 +54,9 @@ gulp.task("style", function () {
       autoprefixer()
     ]))
     .pipe(gulp.dest(`${config.build}/css`))
-    .pipe(minify())
+    .pipe(minify({
+      restructure: false
+    }))
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest(`${config.build}/css`));
 });
@@ -110,7 +112,7 @@ gulp.task("webp", function () {
     .pipe(webp({
       quality: 90
     }))
-    .pipe(gulp.dest(`${config.src}/img`));
+    .pipe(gulp.dest(`${config.src}/img/webp`));
 });
 
 /* Сборка SVG спрайта */

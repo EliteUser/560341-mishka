@@ -43,11 +43,11 @@
 }
 
 .reviews__toggle--prev {
-  background: url("../img/icon-left-arrow.svg") no-repeat center;
+  background: url("../img/left-arrow-icon.svg") no-repeat center;
 }
 
 .reviews__toggle--next {
-  background: url("../img/icon-right-arrow.svg") no-repeat center;
+  background: url("../img/right-arrow-icon.svg") no-repeat center;
   margin-left: -5px;
 }
 
@@ -73,7 +73,7 @@
     background-size: 350px 457px, 100%;
     background-position: left top, center bottom;
 
-    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/review@2x.jpg"), url("../img/bg-zigzag-line.svg");
     }
   }
