@@ -38,7 +38,7 @@ gulp.task("browserSync", function () {
 
   gulp.watch(`${config.src}/sass/**/*.{scss,sass}`, gulp.series("style"));
   gulp.watch(`${config.src}/js/**/*.js`, gulp.series("js"));
-  gulp.watch(`${config.src}/*.html`, gulp.series("html"));
+  gulp.watch(`${config.src}/**/*.html`, gulp.series("html"));
   gulp.watch(`${config.build}/**/*.*`).on("change", browserSync.reload);
 });
 
@@ -58,17 +58,6 @@ gulp.task("style", function () {
       restructure: false
     }))
     .pipe(rename("style.min.css"))
-    .pipe(gulp.dest(`${config.build}/css`));
-});
-
-/* Normalize.css */
-
-gulp.task("normalize", function () {
-  return gulp.src(`${config.src}/sass/normalize.scss`)
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(minify())
-    .pipe(rename("normalize.min.css"))
     .pipe(gulp.dest(`${config.build}/css`));
 });
 
@@ -161,7 +150,6 @@ gulp.task("copy", function () {
 gulp.task("build", gulp.series(
   "clean",
   "copy",
-  "normalize",
   "style",
   "sprite",
   "html",
