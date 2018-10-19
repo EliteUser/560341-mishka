@@ -17,6 +17,10 @@ const del = require("del");
 const babel = require("gulp-babel");
 const concat = require("gulp-concat");
 const uglifyJs = require("gulp-uglify");
+const sourcemaps = require("gulp-sourcemaps");
+const argv = require('yargs').argv;
+
+const isProduction = (argv.production !== undefined);
 
 /* Директории: исходники и сборка */
 
@@ -38,38 +42,46 @@ gulp.task("browserSync", function () {
 
   gulp.watch(`${config.src}/sass/**/*.{scss,sass}`, gulp.series("style"));
   gulp.watch(`${config.src}/js/**/*.js`, gulp.series("js"));
-  gulp.watch(`${config.src}/*.html`, gulp.series("html"));
+  gulp.watch(`${config.src}/**/*.html`, gulp.series("html"));
   gulp.watch(`${config.build}/**/*.*`).on("change", browserSync.reload);
 });
 
 /* Сборка стилей и минификация */
 
 gulp.task("style", function () {
-  return gulp.src(`${config.src}/sass/style.scss`)
-    .pipe(plumber())
-    .pipe(sass({
-      outputStyle: "expanded"
-    }))
-    .pipe(postcss([
-      autoprefixer()
-    ]))
-    .pipe(gulp.dest(`${config.build}/css`))
-    .pipe(minify({
-      restructure: false
-    }))
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest(`${config.build}/css`));
-});
-
-/* Normalize.css */
-
-gulp.task("normalize", function () {
-  return gulp.src(`${config.src}/sass/normalize.scss`)
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(minify())
-    .pipe(rename("normalize.min.css"))
-    .pipe(gulp.dest(`${config.build}/css`));
+  if (isProduction) {
+    return gulp.src(`${config.src}/sass/style.scss`)
+      .pipe(plumber())
+      .pipe(sass({
+        outputStyle: "expanded"
+      }))
+      .pipe(postcss([
+        autoprefixer()
+      ]))
+      .pipe(gulp.dest(`${config.build}/css`))
+      .pipe(minify({
+        restructure: false
+      }))
+      .pipe(rename("style.min.css"))
+      .pipe(gulp.dest(`${config.build}/css`));
+  } else {
+    return gulp.src(`${config.src}/sass/style.scss`)
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+      .pipe(sass({
+        outputStyle: "expanded"
+      }))
+      .pipe(postcss([
+        autoprefixer()
+      ]))
+      .pipe(gulp.dest(`${config.build}/css`))
+      .pipe(minify({
+        restructure: false
+      }))
+      .pipe(rename("style.min.css"))
+      .pipe(sourcemaps.write("../css"))
+      .pipe(gulp.dest(`${config.build}/css`));
+  }
 });
 
 /* Транспайлинг JS и минификация */
@@ -161,7 +173,6 @@ gulp.task("copy", function () {
 gulp.task("build", gulp.series(
   "clean",
   "copy",
-  "normalize",
   "style",
   "sprite",
   "html",
