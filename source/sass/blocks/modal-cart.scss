@@ -14,16 +14,17 @@
 
 .modal-cart--show {
   display: flex;
+  cursor: pointer;
 }
 
 .modal-cart__box {
   width: 320px;
-  margin: 0 auto;
   padding: 30px 30px 46px;
   text-align: center;
   border: 1px solid #c7c7c7;
   background-color: #ffffff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  cursor: auto;
 }
 
 .modal-cart__title {
@@ -87,7 +88,6 @@
 @media (min-width: $screen-tablet) {
   .modal-cart__box {
     width: 568px;
-    margin: auto;
     padding: 33px 70px 46px;
   }
 

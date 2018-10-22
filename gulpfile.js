@@ -9,6 +9,7 @@ const posthtml = require("gulp-posthtml");
 const include = require("posthtml-include");
 const autoprefixer = require("autoprefixer");
 const minify = require("gulp-csso");
+const htmlmin = require("gulp-htmlmin");
 const rename = require("gulp-rename");
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
@@ -17,10 +18,11 @@ const del = require("del");
 const babel = require("gulp-babel");
 const concat = require("gulp-concat");
 const uglifyJs = require("gulp-uglify");
+const gulpIf = require("gulp-if");
 const sourcemaps = require("gulp-sourcemaps");
 const argv = require('yargs').argv;
 
-const isProduction = (argv.production !== undefined);
+const isProduction = ( argv.production !== undefined );
 
 /* Директории: исходники и сборка */
 
@@ -49,39 +51,26 @@ gulp.task("browserSync", function () {
 /* Сборка стилей и минификация */
 
 gulp.task("style", function () {
-  if (isProduction) {
-    return gulp.src(`${config.src}/sass/style.scss`)
-      .pipe(plumber())
-      .pipe(sass({
-        outputStyle: "expanded"
-      }))
-      .pipe(postcss([
-        autoprefixer()
-      ]))
-      .pipe(gulp.dest(`${config.build}/css`))
-      .pipe(minify({
-        restructure: false
-      }))
-      .pipe(rename("style.min.css"))
-      .pipe(gulp.dest(`${config.build}/css`));
-  } else {
-    return gulp.src(`${config.src}/sass/style.scss`)
-      .pipe(plumber())
-      .pipe(sourcemaps.init())
-      .pipe(sass({
-        outputStyle: "expanded"
-      }))
-      .pipe(postcss([
-        autoprefixer()
-      ]))
-      .pipe(gulp.dest(`${config.build}/css`))
-      .pipe(minify({
-        restructure: false
-      }))
-      .pipe(rename("style.min.css"))
-      .pipe(sourcemaps.write("../css"))
-      .pipe(gulp.dest(`${config.build}/css`));
-  }
+  return gulp.src(`${config.src}/sass/style.scss`)
+    .pipe(plumber())
+    .pipe(
+      gulpIf(!isProduction, sourcemaps.init())
+    )
+    .pipe(sass({
+      outputStyle: "expanded"
+    }))
+    .pipe(postcss([
+      autoprefixer()
+    ]))
+    .pipe(gulp.dest(`${config.build}/css`))
+    .pipe(minify({
+      restructure: false
+    }))
+    .pipe(rename("style.min.css"))
+    .pipe(
+      gulpIf(!isProduction, sourcemaps.write("../css"))
+    )
+    .pipe(gulp.dest(`${config.build}/css`));
 });
 
 /* Транспайлинг JS и минификация */
@@ -147,7 +136,10 @@ gulp.task("html", function () {
     .pipe(posthtml([
       include()
     ]))
-    .pipe(gulp.dest(config.build))
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
+    .pipe(gulp.dest(config.build));
 });
 
 /* Удаление папки с билдом */
