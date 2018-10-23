@@ -36,12 +36,26 @@
   &:focus {
     outline: none;
     border-color: $page-green;
-
-    & + .textfield__icon {
-      opacity: 1;
-      fill: $page-green;
-    }
   }
+}
+
+.textfield__input:hover + .textfield__icon {
+  opacity: 1;
+  fill: $page-green;
+}
+
+.textfield__input:focus + .textfield__icon {
+  opacity: 1;
+  fill: $page-green;
+}
+
+.textfield__input--invalid {
+  border-bottom-color: $input-error;
+}
+
+.textfield__input--invalid + .textfield__icon {
+  opacity: 1;
+  fill: $input-error;
 }
 
 .textfield__icon {

@@ -101,6 +101,7 @@
 
 @media (min-width: 600px) {
   .categories__item {
+    display: flex;
     width: 50%;
   }
 }
