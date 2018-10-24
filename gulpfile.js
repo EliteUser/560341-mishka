@@ -20,7 +20,7 @@ const concat = require("gulp-concat");
 const uglifyJs = require("gulp-uglify");
 const gulpIf = require("gulp-if");
 const sourcemaps = require("gulp-sourcemaps");
-const argv = require('yargs').argv;
+const argv = require("yargs").argv;
 
 const isProduction = ( argv.production !== undefined );
 
